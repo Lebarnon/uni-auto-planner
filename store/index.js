@@ -30,11 +30,13 @@ export const mutations = {
   },
   updateCurrentTimeTable (state, payload) {
     if (state.timeTables && state.timeTables.length > 0) {
-      if (payload === 0) {
-        state.currentTimeTable = state.timeTables[0]
-      } else {
-        state.currentTimeTable = state.timeTables.find(timeTable => timeTable.id === payload)
-      }
+      state.currentTimeTable = state.timeTables[payload]
+
+      // if (payload === 0) {
+      //   state.currentTimeTable = state.timeTables[0]
+      // } else {
+      //   state.currentTimeTable = state.timeTables.find(timeTable => timeTable.id === payload)
+      // }
     }
   },
   reset (state) {
