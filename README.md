@@ -1,8 +1,8 @@
 <!-- PROJECT TItle -->
 <br />
 <div align="center">
-  <a href="https://github.com/othneildrew/Best-README-Template">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
+  <a href="https://github.com/Lebarnon/uni-auto-planner/blob/master/demo/calendar.png">
+    <img src="https://github.com/Lebarnon/uni-auto-planner/blob/master/demo/calendar.png" alt="Logo" width="80" height="80">
   </a>
 
   <h3 align="center">NTU Schdule Generator</h3>
@@ -13,6 +13,8 @@
   </p>
 </div>
 ## Build Setup
+
+![alt text](https://github.com/Lebarnon/uni-auto-planner/blob/master/demo/Switch%20timetables.gif)
 
 ```bash
 # install dependencies
