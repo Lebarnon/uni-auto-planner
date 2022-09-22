@@ -124,13 +124,18 @@ export default {
         for (let j = 0; j < numOfLessons; j++) {
           const date = dateDict[courseIndexTimeTable.day[j]]
           const timeArray = courseIndexTimeTable.time[j]
-          // console.log(`${timeArray}`, timeArray)
 
           const startTime = timeDict[timeArray[0]]
-          // console.log(`${startTime}`, startTime)
 
           const timeArrayLength = timeArray.length
-          const endTime = timeDict[timeArray[timeArrayLength - 1] + 1].slice(0, 3).concat('20')
+          let endTime = timeDict[timeArray[timeArrayLength - 1] + 1]
+          if (endTime[-2] === 3) {
+            endTime = endTime.slice(0, 3).concat('20')
+          } else if (endTime[-2] === 0) {
+            const decreaseHourBy1 = parseInt(endTime.slice(1, 2)) + 1
+            endTime = endTime.slice(0, 1).concat(`${decreaseHourBy1}:00`)
+          }
+
           const event = {
             name: `${currentCourseCode} | ${courseIndexTimeTable.index}`,
             start: `${date} ${startTime}`,
@@ -182,7 +187,6 @@ export default {
         selectedEvent.value = event
         selectedElement.value = nativeEvent.target
         requestAnimationFrame(() => requestAnimationFrame(() => { selectedOpen.value = true }))
-        console.log(selectedEvent.value)
       }
 
       if (selectedOpen) {

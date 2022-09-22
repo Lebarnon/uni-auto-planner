@@ -34,7 +34,17 @@
         <v-subheader class="mb-0 pb-n2">
           OPTIONS
         </v-subheader>
-        <CourseCodeFormVue @submitCourseCodes="(payload) => handleSubmitCourseCodes(payload)" />
+        <v-expansion-panels v-model="panels" tile flat accordion>
+          <v-expansion-panel>
+            <v-expansion-panel-header>
+              Course Codes
+            </v-expansion-panel-header>
+            <v-expansion-panel-content>
+              <CourseCodeFormVue @submitCourseCodes="(payload) => handleSubmitCourseCodes(payload)" />
+            </v-expansion-panel-content>
+          </v-expansion-panel>
+          <Filters />
+        </v-expansion-panels>
 
         <v-divider />
       </v-list>
@@ -67,7 +77,8 @@
 
 <script setup>
 import CourseCodeFormVue from '~/components/options/CourseCodeForm.vue'
-import TimeTableList from '~/components/timetable/timetableList.vue'
+import TimeTableList from '~/components/timetable/TimetableList.vue'
+import Filters from '~/components/options/Filters.vue'
 import { useNuxtApp } from '#app'
 
 const { $store } = useNuxtApp()
@@ -77,6 +88,8 @@ const scheduleMakerEndpoint = 'http://localhost:5001/ntu-schedule-maker/us-centr
 const displaySnackBar = ref(false)
 const snackBarText = ref('')
 const snackBarColor = ref('error')
+
+const panels = [0]
 
 const handleSubmitCourseCodes = async (payload) => {
   displaySnackBar.value = false
@@ -105,7 +118,7 @@ const handleSubmitCourseCodes = async (payload) => {
     $store.commit('addTimeTables', data.timetables)
     $store.commit('addCourseCodes', payload)
     $store.commit('updateCurrentTimeTable', 0)
-    snackBarText.value = `Created ${data.totalCombinations} TimeTables!`
+    snackBarText.value = `Created ${data.totalCombinations} Timetables. Showing ${data.successfulCombinations} that has no clashes!`
     snackBarColor.value = 'success'
     displaySnackBar.value = true
   }

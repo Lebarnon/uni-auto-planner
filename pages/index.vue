@@ -50,7 +50,7 @@
 </template>
 
 <script>
-import SingleCalendarView from '~/components/timetable/single.vue'
+import SingleCalendarView from '~/components/timetable/Single.vue'
 import { useNuxtApp } from '#app'
 import { computed } from '#imports'
 

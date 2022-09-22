@@ -49,7 +49,7 @@ export default {
     // eslint-disable-next-line no-undef
     const { $store } = useNuxtApp()
     const rules = [v => v.length === 6 || 'Input valid course code']
-    const courseCodes = ref(['CE2003', 'CE2005', 'CE2006'])
+    const courseCodes = ref(['SC1007', 'CE2005', 'CE2006'])
     const form = ref({})
     const isFormValid = ref(false)
     const isLoading = computed(() => $store.getters.getIsGenerating)
