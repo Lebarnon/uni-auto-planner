@@ -15,14 +15,16 @@
     "nuxt-edge": "latest"
   },
   "devDependencies": {
+    "@babel/eslint-parser": "^7.5.4",
     "@nuxt/bridge": "npm:@nuxt/bridge-edge@^3.0.0-27313139.1c88580",
     "@nuxtjs/eslint-config": "^7.0.0",
     "@nuxtjs/eslint-module": "^3.0.2",
     "@nuxtjs/vuetify": "^1.11.3",
-    "@babel/eslint-parser": "^7.5.4",
     "eslint": "^8.1.0",
     "eslint-plugin-nuxt": "^3.0.0",
     "eslint-plugin-vue": "^7.20.0",
+    "sass": "^1.55.0",
+    "sass-loader": "10.1.1",
     "webpack": "^4.0.0"
   }
 }

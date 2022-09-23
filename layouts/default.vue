@@ -83,7 +83,8 @@ import { useNuxtApp } from '#app'
 
 const { $store } = useNuxtApp()
 const title = 'NTU Schedule Maker'
-const scheduleMakerEndpoint = 'http://localhost:5001/ntu-schedule-maker/us-central1/app/generate-timetables'
+// const scheduleMakerEndpoint = 'http://localhost:5001/ntu-schedule-maker/us-central1/app/generate-timetables'
+const scheduleMakerEndpoint = 'https://asia-east2-ntu-schedule-maker.cloudfunctions.net/app/generate-timetables'
 
 const displaySnackBar = ref(false)
 const snackBarText = ref('')
