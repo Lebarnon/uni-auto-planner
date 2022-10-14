@@ -10,6 +10,7 @@
   <p align="center">
     The only way you should be planning your NTU timetable!
     <br />
+     https://ntu-schedule-maker.firebaseapp.com/
   </p>
 </div>
 
@@ -64,7 +65,7 @@ This section should list any major frameworks/libraries used to bootstrap your p
 ### Installation
 1. Clone the repo
    ```sh
-   git clone https://github.com/your_username_/Project-Name.git
+   
    ```
 2. Install NPM packages
    ```sh
